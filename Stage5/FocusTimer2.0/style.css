@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  display: grid;
+  height: 100vh;
+  place-content: center;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  gap: 19.2rem;
+}
+
+.warraperTimer {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  
+}
+
+.timer {
+  display: flex;
+  font-size: 12.6rem;
+}
+
+.warraperButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.warraperSounds {
+  display: grid;
+  grid-template-areas: "A B";
+  gap: 3.2rem;
+}
+
+.play:hover,
+.pause:hover,
+.stop:hover,
+.further:hover,
+.fewer:hover,
+.forest:hover,
+.rain:hover,
+.coffeeShop:hover,
+.firePlace:hover {
+  transform: scale(1.1,1.1);
+  transition: 300ms 70ms;
+  cursor: pointer;
+    
+}
+
+.color path:nth-child(1){
+  fill: #02799D;
+}
+
+.colorFont path:nth-child(2){
+  fill: white
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
