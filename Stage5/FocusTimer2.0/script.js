@@ -131,8 +131,8 @@ function fewerDecrement() {
 }
 
 function colorForest() {
-    cardForest.classList.add("color")
-    cardForest.classList.add("colorFont")
+    cardForest.classList.toggle("color")
+    cardForest.classList.toggle("colorFont")
     cardRain.classList.remove("color")
     cardRain.classList.remove("colorFont")
     cardCoffeeShop.classList.remove("color")
@@ -142,8 +142,9 @@ function colorForest() {
 }
 
 function colorRain() {
-  cardRain.classList.add("color")
-  cardRain.classList.add("colorFont")
+
+  cardRain.classList.toggle("color")
+  cardRain.classList.toggle("colorFont")
   cardForest.classList.remove("color")
   cardForest.classList.remove("colorFont")
   cardCoffeeShop.classList.remove("color")
@@ -153,8 +154,8 @@ function colorRain() {
 }
 
 function colorCoffeeShop() {
-  cardCoffeeShop.classList.add("color")
-  cardCoffeeShop.classList.add("colorFont")
+  cardCoffeeShop.classList.toggle("color")
+  cardCoffeeShop.classList.toggle("colorFont")
   cardForest.classList.remove("color")
   cardForest.classList.remove("colorFont")
   cardRain.classList.remove("color")
@@ -164,8 +165,8 @@ function colorCoffeeShop() {
 }
 
 function colorfirePlace() {
-  cardFirePlace.classList.add("color")
-  cardFirePlace.classList.add("colorFont")
+  cardFirePlace.classList.toggle("color")
+  cardFirePlace.classList.toggle("colorFont")
   cardForest.classList.remove("color")
   cardForest.classList.remove("colorFont")
   cardCoffeeShop.classList.remove("color")
