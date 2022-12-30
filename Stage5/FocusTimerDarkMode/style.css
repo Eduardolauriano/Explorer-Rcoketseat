@@ -1,0 +1,220 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+
+  /* SUN MODE*/
+
+  --sun-color-timer: #323238;
+  --sun-color-bg-sounds: #E1E1E6;
+  --sun-color-icon-sounds: #323238;
+  --sun-color-button: #323238;
+  --sun-color-volum-sounds: #323238;
+  --sun-bg: #FFFFFF;
+
+  /* MOON MODE */
+
+  --moon-color-timer: #FFFFFF;
+  --moon-color-button: #C4C4CC;
+  --moon-color-bg-sounds: #29292E;
+  --moon-color-icon-sounds: #C4C4CC;
+  --moon-color-volum-sounds: #FFFFFF;
+  --moon-bg: #121214;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+
+  background: var(--sun-bg);
+}
+
+#theme{
+  display: none;
+}
+
+header{
+  position:absolute;
+  margin: 5rem 10rem;
+  right: 0;
+}
+
+.moon{
+  display: none;
+}
+
+main{
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+.warraperContainer{
+  display: flex;
+  
+  gap: 19.2rem;
+  align-items: center;
+}
+
+.warraperTimer{
+  display: flex;
+  color: #323238;
+  
+  font-size: 12.7rem;
+  line-height: 14.8rem;
+}
+
+.warraperButton{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.warraperSounds{
+  display: grid;
+  grid-template-areas: "A B";
+  gap: 3.2rem;
+}
+
+.range{
+  position: relative;
+  bottom: 40px;
+  left: 15px;
+  width: 110px;
+}
+
+.volume input{
+  -webkit-appearance: none;
+  width: 110px;
+  height: 5px;
+  background: #000000;
+}
+
+.volume input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+}
+
+.play:hover,
+.pause:hover,
+.stop:hover,
+.plus:hover,
+.minus:hover,
+.forest:hover,
+.rain:hover,
+.coffeeShop:hover,
+.firePlace:hover,
+.sun:hover,
+.moon:hover {
+  transform: scale(1.1);
+  transition: 300ms 70ms;
+  cursor: pointer;  
+}
+
+.color path:nth-child(1){
+  fill: #000000;
+}
+
+.icon path:nth-child(2){
+  fill: #FFFFFF;
+}
+
+.bar .volume input{
+  
+  -webkit-appearance: none;
+  width: 110px;
+  height: 5px;
+  background: #FFFFFF;
+}
+
+.orb .volume input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+/* DARK MODE */
+
+.dark{
+  background: var(--moon-bg);
+}
+
+.dark .sun{
+  display: none;
+}
+
+.dark .moon{
+  display: block;
+}
+
+.dark .warraperTimer{
+  color: var(--moon-color-timer);
+}
+
+.dark .warraperButton path:nth-child(1){
+  fill: var(--moon-color-button);
+}
+
+.dark .warraperSounds path:nth-child(1){
+  fill: var(--moon-color-bg-sounds);
+}
+
+.dark .warraperSounds path:nth-child(2){
+  fill: var(--moon-color-icon-sounds)
+}
+
+.dark .volume input{
+  -webkit-appearance: none;
+  width: 110px;
+  height: 5px;
+  background: #FFFFFF;
+}
+
+.dark .volume input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.dark .color path:nth-child(1){
+  fill: #ffffff;
+}
+
+.dark .icon path:nth-child(2){
+  fill: #000000;
+}
+
+.dark .bar .volume input{
+  
+  -webkit-appearance: none;
+  width: 110px;
+  height: 5px;
+  background: #000000;
+}
+
+.dark .orb .volume input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ff0000;
+  cursor: pointer;
+}
