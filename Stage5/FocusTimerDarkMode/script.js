@@ -15,7 +15,10 @@ const soundForest = new Audio ("./sound/Floresta.wav");
 const soundRain = new Audio ("./sound/Chuva.wav");
 const soundCoffeeShop = new Audio ("./sound/Cafeteria.wav"); 
 const soundFirePlace = new Audio ("./sound/Lareira.wav");
-const volume = document.querySelector('#volume')
+const volumForest = document.querySelector('.volumForest')
+const volumRain = document.querySelector('.volumRain')
+const volumFirePlace = document.querySelector('.volumFirePlace')
+const volumCoffeeShop = document.querySelector('.volumCoffeeShop')
 let minutes = Number(minutesDisplay.textContent)
 let seconds = Number(secondsDisplay.textContent)
 
@@ -164,32 +167,24 @@ function colorfirePlace() {
 }
 
 //FUNCÃO DOS AUDIOS
-function addForest() {
-  buttonForest.classList.add("color")
-  buttonForest.classList.add("icon")
-  buttonForest.classList.add("bar")
-  buttonForest.classList.add("orb")
-}
-
-function removeForest() {
-  buttonForest.classList.remove("color")
-  buttonForest.classList.remove("icon")
-  buttonForest.classList.remove("bar")
-  buttonForest.classList.remove("orb")
-}
-
 function toogleForest() {
   if(buttonForest.classList.contains("color")){
     buttonForest.classList.remove("color")
-    buttonForest.classList.remove("icon")
-    buttonForest.classList.remove("bar")
-    buttonForest.classList.remove("orb")
+    buttonForest.classList.remove("background")
+    volumForest.classList.remove("orb")
+    volumForest.classList.remove("bar")
     soundForest.pause()
   } else {
     buttonForest.classList.add("color")
-    buttonForest.classList.add("icon")
-    buttonForest.classList.add("bar")
-    buttonForest.classList.add("orb")
+    buttonForest.classList.add("background")
+    volumForest.classList.add("orb")
+    volumForest.classList.add("bar")
+    volumRain.classList.remove("orb")
+    volumRain.classList.remove("bar")
+    volumCoffeeShop.classList.remove("orb")
+    volumCoffeeShop.classList.remove("bar") 
+    volumFirePlace.classList.remove("orb")
+    volumFirePlace.classList.remove("bar") 
     soundForest.play()
   }
 }
@@ -197,15 +192,21 @@ function toogleForest() {
 function toogleRain() {
   if(buttonRain.classList.contains("color")){
     buttonRain.classList.remove("color")
-    buttonRain.classList.remove("icon")
-    buttonRain.classList.remove("bar")
-    buttonRain.classList.remove("orb")
+    buttonRain.classList.remove("background")
+    volumRain.classList.remove("orb")
+    volumRain.classList.remove("bar")
     soundRain.pause()
   } else {
     buttonRain.classList.add("color")
-    buttonRain.classList.add("icon")
-    buttonRain.classList.add("bar")
-    buttonRain.classList.add("orb")
+    buttonRain.classList.add("background")
+    volumRain.classList.add("orb")
+    volumRain.classList.add("bar")
+    volumForest.classList.remove("orb")
+    volumForest.classList.remove("bar")
+    volumCoffeeShop.classList.remove("orb")
+    volumCoffeeShop.classList.remove("bar") 
+    volumFirePlace.classList.remove("orb")
+    volumFirePlace.classList.remove("bar") 
     soundRain.play()
   }
 }
@@ -213,15 +214,21 @@ function toogleRain() {
 function toogleCoffeeShop() {
   if(buttonCoffeeShop.classList.contains("color")){
     buttonCoffeeShop.classList.remove("color")
-    buttonCoffeeShop.classList.remove("icon")
-    buttonCoffeeShop.classList.remove("bar")
-    buttonCoffeeShop.classList.remove("orb")
+    buttonCoffeeShop.classList.remove("background")  
+    volumCoffeeShop.classList.remove("orb")
+    volumCoffeeShop.classList.remove("bar")  
     soundCoffeeShop.pause()
   } else {
     buttonCoffeeShop.classList.add("color")
-    buttonCoffeeShop.classList.add("icon")
-    buttonCoffeeShop.classList.add("bar")
-    buttonCoffeeShop.classList.add("orb")
+    buttonCoffeeShop.classList.add("background")  
+    volumCoffeeShop.classList.add("orb")
+    volumCoffeeShop.classList.add("bar") 
+    volumForest.classList.remove("orb")
+    volumForest.classList.remove("bar") 
+    volumRain.classList.remove("orb")
+    volumRain.classList.remove("bar")
+    volumFirePlace.classList.remove("orb")
+    volumFirePlace.classList.remove("bar")  
     soundCoffeeShop.play()
   }
 }
@@ -229,58 +236,77 @@ function toogleCoffeeShop() {
 function toogleFirePlace() {
   if(buttonFirePlace.classList.contains("color")){
     buttonFirePlace.classList.remove("color")
-    buttonFirePlace.classList.remove("icon") 
-    buttonFirePlace.classList.remove("bar")
-    buttonFirePlace.classList.remove("orb")  
+    buttonFirePlace.classList.remove("background")
+    volumFirePlace.classList.remove("orb")
+    volumFirePlace.classList.remove("bar")  
     soundFirePlace.pause()
   } else {
     buttonFirePlace.classList.add("color")
-    buttonFirePlace.classList.add("icon")
-    buttonFirePlace.classList.add("bar")
-    buttonFirePlace.classList.add("orb")
+    buttonFirePlace.classList.add("background")
+    volumFirePlace.classList.add("orb")
+    volumFirePlace.classList.add("bar") 
+    volumForest.classList.remove("orb")
+    volumForest.classList.remove("bar") 
+    volumRain.classList.remove("orb")
+    volumRain.classList.remove("bar")
+    volumCoffeeShop.classList.remove("orb")
+    volumCoffeeShop.classList.remove("bar") 
     soundFirePlace.play()
   }
 }
 
+function addForest() {
+  buttonForest.classList.add("color")
+  buttonForest.classList.add("background")
+  
+  buttonForest.classList.add("orb")
+}
+
+function removeForest() {
+  buttonForest.classList.remove("color")
+  buttonForest.classList.remove("background")
+ 
+  buttonForest.classList.remove("orb")
+}
+
 function addRain() {
   buttonRain.classList.add("color")
-  buttonRain.classList.add("icon")
-  buttonRain.classList.add("bar")
-  buttonRain.classList.add("orb")
+  buttonRain.classList.add("background")
+  
+
 }
 
 function removeRain() {
   buttonRain.classList.remove("color")
-  buttonRain.classList.remove("icon")
-  buttonRain.classList.remove("bar")
-  buttonRain.classList.remove("orb")
+  buttonRain.classList.remove("background")
+  
 }
 
 function addCoffeeShop() {
   buttonCoffeeShop.classList.add("color")
-  buttonCoffeeShop.classList.add("icon")
-  buttonCoffeeShop.classList.add("bar")
+  buttonCoffeeShop.classList.add("background")
+  buttonCoffeeShop.classList.add("beam")
   buttonCoffeeShop.classList.add("orb")
 }
 
 function removeCoffeeShop() {
   buttonCoffeeShop.classList.remove("color")
-  buttonCoffeeShop.classList.remove("icon")
-  buttonCoffeeShop.classList.remove("bar")
+  buttonCoffeeShop.classList.remove("background")
+  buttonCoffeeShop.classList.remove("beam")
   buttonCoffeeShop.classList.remove("orb")  
 }
 
 function addFirePlace() {
   buttonFirePlace.classList.add("color")
-  buttonFirePlace.classList.add("icon")
-  buttonFirePlace.classList.add("bar")
+  buttonFirePlace.classList.add("background")
+  buttonFirePlace.classList.add("beam")
   buttonFirePlace.classList.add("orb")
 }
 
 function removeFirePlace() {
   buttonFirePlace.classList.remove("color")
-  buttonFirePlace.classList.remove("icon") 
-  buttonFirePlace.classList.remove("bar")
+  buttonFirePlace.classList.remove("background")
+  buttonFirePlace.classList.remove("beam")
   buttonFirePlace.classList.remove("orb") 
 }
 
