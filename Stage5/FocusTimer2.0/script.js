@@ -48,7 +48,6 @@ buttonFewer.onclick = () => {
 
 cardForest.onclick = () => {
   colorForest()
-  soundForest.play()
   soundRain.pause()
   soundCoffeeShop.pause()
   soundFirePlace.pause()
@@ -56,7 +55,6 @@ cardForest.onclick = () => {
 
 cardRain.onclick = () => {
   colorRain() 
-  soundRain.play()
   soundForest.pause()
   soundCoffeeShop.pause()
   soundFirePlace.pause()
@@ -64,7 +62,6 @@ cardRain.onclick = () => {
 
 cardCoffeeShop.onclick = () => {
   colorCoffeeShop()
-  soundCoffeeShop.play()
   soundRain.pause()
   soundForest.pause()
   soundFirePlace.pause()
@@ -72,7 +69,6 @@ cardCoffeeShop.onclick = () => {
 
 cardFirePlace.onclick = () => {
   colorfirePlace()
-  soundFirePlace.play()
   soundCoffeeShop.pause()
   soundRain.pause()
   soundForest.pause()
@@ -131,8 +127,7 @@ function fewerDecrement() {
 }
 
 function colorForest() {
-    cardForest.classList.toggle("color")
-    cardForest.classList.toggle("colorFont")
+    toogleForest()
     cardRain.classList.remove("color")
     cardRain.classList.remove("colorFont")
     cardCoffeeShop.classList.remove("color")
@@ -142,9 +137,7 @@ function colorForest() {
 }
 
 function colorRain() {
-
-  cardRain.classList.toggle("color")
-  cardRain.classList.toggle("colorFont")
+  toogleRain()
   cardForest.classList.remove("color")
   cardForest.classList.remove("colorFont")
   cardCoffeeShop.classList.remove("color")
@@ -154,8 +147,7 @@ function colorRain() {
 }
 
 function colorCoffeeShop() {
-  cardCoffeeShop.classList.toggle("color")
-  cardCoffeeShop.classList.toggle("colorFont")
+  toogleCoffeeShop()  
   cardForest.classList.remove("color")
   cardForest.classList.remove("colorFont")
   cardRain.classList.remove("color")
@@ -165,14 +157,62 @@ function colorCoffeeShop() {
 }
 
 function colorfirePlace() {
-  cardFirePlace.classList.toggle("color")
-  cardFirePlace.classList.toggle("colorFont")
+  toogleFirePlace()  
   cardForest.classList.remove("color")
   cardForest.classList.remove("colorFont")
   cardCoffeeShop.classList.remove("color")
   cardCoffeeShop.classList.remove("colorFont")
   cardRain.classList.remove("color")
   cardRain.classList.remove("colorFont")
+}
+
+function toogleForest(){
+  if(cardForest.classList.contains('color')){
+    cardForest.classList.remove("color")
+    cardForest.classList.remove("colorFont")
+    soundForest.pause()
+  }
+    else{
+    cardForest.classList.add("color")
+    cardForest.classList.add("colorFont")
+    soundForest.play()
+    }
+}
+function toogleRain(){
+  if(cardRain.classList.contains('color')){
+    cardRain.classList.remove("color")
+    cardRain.classList.remove("colorFont")
+    soundRain.pause()
+  }
+    else{
+    cardRain.classList.add("color")
+    cardRain.classList.add("colorFont")
+    soundRain.play()
+    }
+}
+function toogleCoffeeShop(){
+  if(cardCoffeeShop.classList.contains('color')){
+    cardCoffeeShop.classList.remove("color")
+    cardCoffeeShop.classList.remove("colorFont")
+    soundCoffeeShop.pause()
+  }
+    else{
+    cardCoffeeShop.classList.add("color")
+    cardCoffeeShop.classList.add("colorFont")
+    soundCoffeeShop.play()
+    }
+}
+function toogleFirePlace(){
+  if(cardFirePlace.classList.contains('color')){
+    cardFirePlace.classList.remove("color")
+    cardFirePlace.classList.remove("colorFont")
+    soundFirePlace.pause()
+  }
+    else{
+    cardFirePlace.classList.add("color")
+    cardFirePlace.classList.add("colorFont")
+    soundFirePlace.play()
+    }
 }
 
 soundForest.loop = true
